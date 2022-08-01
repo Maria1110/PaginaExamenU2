@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+ <form action="../../form-result.php" method="post" target="_blank">
+
+  <p>
+
+    Busca entre nuestros modelos: <input type="search" name="busquedamodelos" list="listamodelos">
+
+    <input type="submit" value="Buscar">
+
+  </p>
+
+</form>
+ </br>
+ </br>
+
+<form action="../../form-result.php" method="post" target="_blank">
+
+  <p>
+
+    Buscar por código: <input type="search" name="busquedacodigo" pattern="[A-Za-z0-9]{8,20}" title="Un código válido consiste en una cadena con 8 a 20 caracteres, cada uno de los cuales es una letra o un dígito" required>
+
+    <input type="submit" value="Buscar">
+
+  </p>
+
+</form>
+
+<datalist id="listamodelos">
+
+  <option value="Camaro">
+
+  <option value="Corvette">
+
+  <option value="Impala">
+
+  <option value="Colorado">
+
+</datalist>
+</body>
+</html>

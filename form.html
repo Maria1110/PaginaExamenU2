@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body bgcolor="pink">
+
+
+<form action="" method="post" id='form'>
+<h2 class="error" id="msj"></h2>
+<label for="nombre"> Nombre: </label>
+<input type="text" name="nombre" id="nombre" required maxlength="45" />
+
+<br>
+<h2 class="error" id="msj2"></h2>
+<br>
+<label for="apellido"> Apellido: </label>
+<input type="text" name="apellido" id="apellido" >
+
+<br>
+<h2 class="error" id="msj3"></h2>
+<br>
+<label for="email"> E-mail </label>
+<input type="email" name="email" id="email">
+
+<br>
+<h2 class="error" id="msj4"></h2>
+<br>
+<label for="passw"> Password </label>
+<input type="password" name="pasw" id="password" >
+<br>
+<button type="submit">Enviar</button>
+</form>
+
+<style>
+  .error{
+    color: red;
+    font-size: 10px;
+    font-family: arial;
+  }
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+const nombre = document.getElementById('nombre');
+
+
+const apellido = document.getElementById('apellido');
+
+const email = document.getElementById('email');
+
+const password = document.getElementById('password');
+
+
+const msj = document.getElementById('msj');
+const msj2 = document.getElementById('msj2');
+const msj3= document.getElementById('msj3');
+const msj4 = document.getElementById('msj4');
+
+const form = document.getElementById('form');
+
+form.addEventListener("submit", e=>{
+e.preventDefault();
+let regexEmail= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+if (  nombre.value.length<2) {
+	msj.innerText="el nombre debe de ser mayor a 2 digitos"
+
+}
+if (  apellido.value.length<2) {
+    msj2.innerText="el apelido debe de ser mayor a 2 digitos"
+
+}
+
+if (!regexEmail.test(email.value)) {
+  msj3.innerText=" * el EMAIL no es correcto"
+
+}
+
+if (  password.value.length<8) {
+    msj4.innerText="el pasword debe ser mayor a 8 caracteres"
+
+}
+else{ 
+alert('verifique los campos')
+
+}
+})
+
+
+
+</script>
+
+</body>
+</html>
